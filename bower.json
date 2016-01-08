@@ -1,0 +1,17 @@
+{
+  "name": "TAMU-UI-Seed",
+  "description": "An example user interface using the TAMU-UI-Core",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TAMULib/TAMU-UI-Seed",
+  "license": "MIT",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+    "ng-table": "0.5.4",
+    "ng-csv": "0.3.2",
+    "core": "git@framework.github.com:TAMULib/Angular-Framework.git#open_source_update"
+  },
+  "resolutions": {
+    "angular": "1.4.x"
+  }
+}
