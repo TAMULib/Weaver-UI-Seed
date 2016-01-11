@@ -14,14 +14,12 @@
 	<link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+	<!--<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">-->
 	
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="resources/styles/main.css">
+	<!--<link rel="stylesheet" href="resources/styles/main.css">-->
 	<link rel="stylesheet" href="resources/styles/app.css">
-
-	<link href='fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
 	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
@@ -78,8 +76,8 @@
 						<div class="col-12 col-lg-12">
 
 							<div class="btn-group btn-group-lg app-menu" ng-class="{'btn-group-justified': windowWidth > 750, 'btn-group-vertical vertical-justified': windowWidth <= 750}" role="group">							
-								<a class="btn btn-default" href="documents" ng-class="{'active' : view == '/documents'}">Documents</a>							
-								<a ng-class="{'active' : view == '/assignments' || view.substring(0,9)=='/annotate'}" class="btn btn-default" href="assignments">My Assigned Documents</a>							
+								<a class="btn btn-default" href="myView" ng-class="{'active' : view == '/myView'}">My View</a>							
+								<a ng-class="{'active' : view == '/users'}" class="btn btn-default" href="users">Users</a>							
 							</div>
 						</div>
 					</div>
@@ -87,7 +85,7 @@
 					<div ng-view class="view"></div>
 
 					<footer>
-						MetadataTool App Version: <span app-version></span>
+						TAMU UI Seed App Version: <span app-version></span>
 					</footer>
 				</div>
 			</div>
@@ -171,21 +169,16 @@
 
 	<!-- endbuild -->
 
-		
-
-
 	<!--  App libraries -->
 
 	<!-- build:js resources/scripts/app_concat.js -->
 	
 	    <!-- Application Start -->	    
-	    
 	    <script src="app.js"></script>
 	    <script src="config/runTime.js"></script>
 	    <script src="config/routes.js"></script>
 
 	     <!-- Directives -->
-	    <script src="directives/formatDirective.js"></script>
 
 	    <!-- Services -->
 
@@ -193,14 +186,12 @@
 
 	    <!-- Models -->
 	    <script src="models/userRepoModel.js"></script>
-	    <script src="models/documentRepoModel.js"></script>
-	    <script src="models/documentPageModel.js"></script>
-	    <script src="models/metadataModel.js"></script>
-	    <script src="models/controlledVocabularyModel.js"></script>
 
 	    <!-- Controllers -->
-	    <script src="controllers/userRepoController.js"></script>
 	    <script src="controllers/adminController.js"></script>
+	    <script src="controllers/userRepoController.js"></script>
+	    <script src="controllers/navigationController.js"></script>
+	    
 	 
     
     <!-- endbuild -->

@@ -1,7 +1,7 @@
 'use strict';
 
-describe('metadataTool.version module', function() {
-  beforeEach(module('metadataTool.version'));
+describe('app.version module', function() {
+  beforeEach(module('app.version'));
 
   describe('app-version directive', function() {
     it('should print current version', function() {
