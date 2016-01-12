@@ -4,7 +4,7 @@ describe('model: UserRepo', function() {
 	
 	beforeEach(module('core'));
 
-	beforeEach(module('metadataTool'));
+	beforeEach(module('app'));
 	
 	beforeEach(module('mock.wsApi'));
 	

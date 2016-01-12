@@ -4,7 +4,7 @@ describe('model: User', function() {
 	
 	beforeEach(module('core'));
 	
-	beforeEach(module('metadataTool'));
+	beforeEach(module('app'));
 	
 	beforeEach(module('mock.wsApi'));
 	
