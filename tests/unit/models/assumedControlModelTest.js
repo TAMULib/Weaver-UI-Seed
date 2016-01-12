@@ -4,7 +4,7 @@ describe('model: AssumedControl', function() {
 
 	beforeEach(module('core'));
 
-	beforeEach(module('metadataTool'));
+	beforeEach(module('app'));
 	
 	beforeEach(module('AssumedControl'));
 			
