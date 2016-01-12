@@ -1,9 +1,11 @@
 app.config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
 	$locationProvider.html5Mode(true);
+	
 	$sceDelegateProvider.resourceUrlWhitelist([
         'self',
         appConfig.webService + "/**"
     ]);
+	
 	$routeProvider.
 		when('/users', {
 			templateUrl: 'views/users.html',
@@ -17,15 +19,19 @@ app.config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
 		}).
 
 		// Error Routes
-		when('/403', {
-			templateUrl: 'views/errors/403.html'
+		when('/error/403', {
+			templateUrl: 'views/errors/403.html',
+			controller: 'ErrorPageController'
 		}).
-		when('/404', {
-			templateUrl: 'views/errors/404.html'
+		when('/error/404', {
+			templateUrl: 'views/errors/404.html',
+			controller: 'ErrorPageController'
+
 		}).
-		when('/500', {
-			templateUrl: 'views/errors/500.html'
+		when('/error/500', {
+			templateUrl: 'views/errors/500.html',
+			controller: 'ErrorPageController'
 		}).
-		otherwise({redirectTo: '/404'});
+		otherwise({redirectTo: '/error/404'});
 
 });
