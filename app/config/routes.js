@@ -1,4 +1,4 @@
-app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function($routeProvider, $locationProvider, $sceDelegateProvider) {
+app.config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
 	$locationProvider.html5Mode(true);
 	$sceDelegateProvider.resourceUrlWhitelist([
         'self',
@@ -6,15 +6,26 @@ app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', funct
     ]);
 	$routeProvider.
 		when('/users', {
-			templateUrl: 'views/users.html'
+			templateUrl: 'views/users.html',
+			access: ["ROLE_ADMIN", "ROLE_MANGER"]
 		}).
-		when('/myview', {
+		when('/myView', {
 			templateUrl: 'views/myview.html'
 		}).
-		when('/restrictedAccess', {
-			templateUrl: 'views/restrictedAccess.html'
-		}).
-		otherwise({redirectTo: '/',
+		when('/', {
 			templateUrl: 'views/home.html'
-		});
-}]);
+		}).
+
+		// Error Routes
+		when('/403', {
+			templateUrl: 'views/errors/403.html'
+		}).
+		when('/404', {
+			templateUrl: 'views/errors/404.html'
+		}).
+		when('/500', {
+			templateUrl: 'views/errors/500.html'
+		}).
+		otherwise({redirectTo: '/404'});
+
+});
