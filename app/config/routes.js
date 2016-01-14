@@ -1,9 +1,5 @@
-app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', function($routeProvider, $locationProvider, $sceDelegateProvider) {
-	$locationProvider.html5Mode(true);
-	$sceDelegateProvider.resourceUrlWhitelist([
-        'self',
-        appConfig.webService + "/**"
-    ]);
+app.config(function($routeProvider) {
+	
 	$routeProvider.
 		when('/users', {
 			templateUrl: 'views/users.html'
@@ -17,4 +13,5 @@ app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', funct
 		otherwise({redirectTo: '/',
 			templateUrl: 'views/home.html'
 		});
-}]);
+
+});

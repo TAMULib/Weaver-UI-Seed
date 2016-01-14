@@ -50,7 +50,7 @@
 							<a href ng-if="isAnonymous()" ng-click="login()">Login</a>
 							
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="myView">My View</a></li>
+								<li><a href="myview">My View</a></li>
 								<li ng-if="isAdmin() || isAssuming() == 'true'" role="presentation" class="dropdown-header">Manager Actions</li>
 								<li ng-if="isAdmin() || isManager()" ><a href="users">Manage Users</a></li>
 								<li ng-if="isAdmin() || isAssuming() == 'true'" role="presentation" class="divider"></li>
@@ -73,7 +73,7 @@
 						<div class="col-12 col-lg-12">
 
 							<div class="btn-group btn-group-lg app-menu" ng-class="{'btn-group-justified': windowWidth > 750, 'btn-group-vertical vertical-justified': windowWidth <= 750}" role="group">							
-								<a class="btn btn-default" href="myView" ng-class="{'active' : view == '/myView'}">My View</a>							
+								<a class="btn btn-default" href="myview" ng-class="{'active' : view == '/myview'}">My View</a>							
 								<a ng-class="{'active' : view == '/users'}" class="btn btn-default" href="users">Users</a>							
 							</div>
 						</div>
@@ -134,6 +134,7 @@
 
 		<!-- Application Start -->	
 	    <script src="bower_components/core/app/core.js"></script>
+	    <script src="bower_components/core/app/config/coreAngularConfig.js"></script>
 	    <script src="bower_components/core/app/setup.js"></script>
 	    <script src="bower_components/core/app/config/logging.js"></script>
 
@@ -188,6 +189,8 @@
 	    <!-- Controllers -->
 	    <script src="controllers/adminController.js"></script>
 	    <script src="controllers/userRepoController.js"></script>
+	    <script src="controllers/navigationController.js"></script>
+
 	    <script src="controllers/navigationController.js"></script>
 	    
 	 
