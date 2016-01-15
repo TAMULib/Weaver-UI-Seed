@@ -8,7 +8,7 @@ app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', funct
 		when('/users', {
 			templateUrl: 'views/users.html'
 		}).
-		when('/myView', {
+		when('/myview', {
 			templateUrl: 'views/myview.html'
 		}).
 		when('/register', {
