@@ -11,8 +11,11 @@ app.config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
 			templateUrl: 'views/users.html',
 			access: ["ROLE_ADMIN", "ROLE_MANGER"]
 		}).
-		when('/myView', {
+		when('/myview', {
 			templateUrl: 'views/myview.html'
+		}).
+		when('/register', {
+			templateUrl: 'bower_components/core/app/views/register.html'
 		}).
 		when('/', {
 			templateUrl: 'views/home.html'
@@ -35,3 +38,4 @@ app.config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
 		otherwise({redirectTo: '/error/404'});
 
 });
+
