@@ -11,6 +11,9 @@ app.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', funct
 		when('/myview', {
 			templateUrl: 'views/myview.html'
 		}).
+		when('/theme', {
+			templateUrl: 'views/theme.html'
+		}).
 		when('/restrictedAccess', {
 			templateUrl: 'views/restrictedAccess.html'
 		}).
