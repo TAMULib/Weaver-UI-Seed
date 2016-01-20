@@ -58,6 +58,22 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		});
 	};
 
+	Theme.addTheme = function(newTheme) {
+		console.log(newTheme);
+		return $q(function(resolve,reject) {
+			WsApi.fetch({
+					endpoint: '/private/queue', 
+					controller: 'theme', 
+					method: 'add-theme',
+					data: {"newTheme":newTheme}
+			}).then(function() {
+				resolve("Theme Added");
+			},function() {
+				reject("Failed to add new Theme");
+			});
+		});
+	};
+
 	return Theme;
 	
 });

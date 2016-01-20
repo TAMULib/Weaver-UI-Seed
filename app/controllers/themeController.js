@@ -19,7 +19,12 @@ app.controller('ThemeController', function ($controller, $scope, $window, ThemeM
 		});
 	};
 
+	$scope.addTheme = function(newTheme) {
+		ThemeModel.addTheme(newTheme);
+	};
+/*
 	$scope.getThemeGloss = function(field) {
 		return (typeof themeFieldGlosses[field] !== 'undefined' && themeFieldGlosses[field]) ? themeFieldGlosses[field]:field;
 	};
+*/
 });
