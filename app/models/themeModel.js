@@ -59,7 +59,6 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 	};
 
 	Theme.addTheme = function(newTheme) {
-		console.log(newTheme);
 		return $q(function(resolve,reject) {
 			WsApi.fetch({
 					endpoint: '/private/queue', 
@@ -74,6 +73,20 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		});
 	};
 
+	Theme.activateTheme = function(themeId) {
+		return $q(function(resolve,reject) {
+			WsApi.fetch({
+					endpoint: '/private/queue', 
+					controller: 'theme', 
+					method: 'activate-theme',
+					data: {"themeId":themeId}
+			}).then(function() {
+				resolve("Theme Activated");
+			},function() {
+				reject("Failed to activate Theme");
+			});
+		});
+	};
 	return Theme;
 	
 });

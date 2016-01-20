@@ -2,25 +2,24 @@ app.controller('ThemeController', function ($controller, $scope, $window, ThemeM
 	
     angular.extend(this, $controller('AbstractController', {$scope: $scope}));
 
-	$scope.themeValues = {
-		"primary": "#500000",
-		"secondary": "#3c0000",
-		"linkcolor": "#337ab7",
-		"basefontsize": "14px"
-	}
-
-	themeFieldGlosses = {"linkcolor":"Link Color","basefontsize":"Base Font Size"};
-    
 	$scope.themes = ThemeModel.get();
 
-	$scope.updateThemeProperty = function(themeId,propertyId,value) {
-		ThemeModel.updateThemeProperty(themeId,propertyId,value).then(function() {
-			$window.location.reload();
+	$scope.updateThemeProperty = function(theme,propertyId,value) {
+		ThemeModel.updateThemeProperty(theme.id,propertyId,value).then(function() {
+			if (theme.active == true) {
+				$window.location.reload();
+			}
 		});
 	};
 
 	$scope.addTheme = function(newTheme) {
 		ThemeModel.addTheme(newTheme);
+	};
+
+	$scope.activateTheme = function(themeId) {
+		ThemeModel.activateTheme(themeId).then(function() {
+			$window.location.reload();
+		});
 	};
 /*
 	$scope.getThemeGloss = function(field) {
