@@ -22,10 +22,12 @@
 	</div>
 	<div class="col-md-4 pull-right">
 		<form>
-			<input class="form-control" type="text" name="new-theme-name" ng-model="newTheme.name" />
-			<span class="input-group-btn">
-				<button type="button" class="btn btn-default" ng-click="addTheme(newTheme)">Add Theme</button>
-			</span>
+			<div class="input-group">
+				<input class="form-control" type="text" name="new-theme-name" ng-model="newTheme.name" placeholder="Theme Name" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="addTheme(newTheme)">Add Theme</button>
+				</span>
+			</div>
 		</form>
 	</div>
 </div>
