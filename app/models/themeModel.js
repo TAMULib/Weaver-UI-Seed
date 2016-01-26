@@ -16,6 +16,25 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		self.unwrap(self, data);
 	};
 
+	Theme.receive = function(theme, response) {
+		if(JSON.parse(response.body).payload.String) {
+			console.log(JSON.parse(response.body).payload.String);
+		}
+		else {
+			var newTheme = true;
+			for(var key in Theme.data.list) {
+				if(Theme.data.list[key].id == theme.id) {
+					Theme.data.list[key] = JSON.parse(response.body).payload.CoreTheme;
+					newTheme = false;
+					break;
+				}
+			}
+			if(newTheme && Theme.data.list != null) {
+				Theme.data.list.push(JSON.parse(response.body).payload.CoreTheme);
+			}
+		}
+	};
+
 	Theme.get = function() {
 		
 		var newThemePromise = WsApi.fetch({
@@ -26,6 +45,13 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 
 		Theme.promise = newThemePromise;
 		Theme.data = new Theme(newThemePromise);
+
+		WsApi.listen({
+				endpoint: '/channel', 
+				controller: 'theme/'
+		}).then(null, null, function(response) {
+			Theme.receive(JSON.parse(response.body).payload.CoreTheme, response);
+		});
 		
 		return Theme.data;
 	};
