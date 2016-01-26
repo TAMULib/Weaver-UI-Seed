@@ -1,4 +1,6 @@
 <div class="view view-theme-manager col-xs-12" ng-controller="ThemeController">
+	<!-- ADMINS ONLY -->
+	<div ng-if="!isAdmin()" class="row" ng-include src="'views/restrictedAccess.html'" ></div>
 	<h2>Update Theme</h2>
 	<div class="col-md-4">
 		<div ng-repeat="theme in themes.list">
