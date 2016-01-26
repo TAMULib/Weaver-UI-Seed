@@ -4,10 +4,12 @@ app.controller('ThemeController', function ($controller, $scope, $window, ThemeM
 
 	$scope.themes = ThemeModel.get();
 
+	$scope.refreshable = false;
+
 	$scope.updateThemeProperty = function(theme,propertyId,value) {
 		ThemeModel.updateThemeProperty(theme.id,propertyId,value).then(function() {
 			if (theme.active == true) {
-				$window.location.reload();
+				$scope.refreshable = true;
 			}
 		});
 	};
@@ -18,12 +20,11 @@ app.controller('ThemeController', function ($controller, $scope, $window, ThemeM
 
 	$scope.activateTheme = function(themeId) {
 		ThemeModel.activateTheme(themeId).then(function() {
-			$window.location.reload();
+			$scope.refreshPage();
 		});
 	};
-/*
-	$scope.getThemeGloss = function(field) {
-		return (typeof themeFieldGlosses[field] !== 'undefined' && themeFieldGlosses[field]) ? themeFieldGlosses[field]:field;
+
+	$scope.refreshPage = function() {
+		$window.location.reload();
 	};
-*/
 });

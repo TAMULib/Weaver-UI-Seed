@@ -8,6 +8,7 @@
 				<h4>
 					{{theme.name}}
 					<span ng-if="theme.active">(Active)</span>
+					<a ng-if="theme.active && refreshable" href="#" ng-click="refreshPage()">(Refresh Page)</span>
 					<a ng-if="!theme.active" href="#" ng-click="activateTheme(theme.id)">(Activate)</a>
 				</h4>
 				<div class="input-group" ng-repeat="property in theme.properties">
