@@ -1,5 +1,3 @@
-@import "sass/main";
-
 main {
   display: block;
   height: auto;
@@ -186,4 +184,12 @@ main footer {
 
 .hover-pointer:hover {
   cursor: pointer;
+}
+
+.view-theme-manager .input-group {
+  margin-bottom: 16px;
+}
+
+.view-theme-manager .input-group-addon label {
+  min-width: 100px;
 }

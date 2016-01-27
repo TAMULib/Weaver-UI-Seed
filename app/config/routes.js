@@ -10,6 +10,10 @@ app.config(function($routeProvider) {
 		}).
 		when('/myview', {
 			templateUrl: 'views/myview.html'
+		}).
+		when('/theme', {
+			templateUrl: 'views/theme.html',
+			access: ["ROLE_ADMIN"]
 		}).		
 		when('/', {
 			templateUrl: 'views/home.html'

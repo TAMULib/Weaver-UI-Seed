@@ -15,11 +15,10 @@
 
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
 	<!--<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">-->
-	
+
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
-	<!--<link rel="stylesheet" href="resources/styles/main.css">-->
-	<link rel="stylesheet" href="resources/styles/app.css">
+	<link rel="stylesheet" href="http://localhost:9000/wro/app.css">
 
 	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
@@ -84,7 +83,8 @@
 
 							<div class="btn-group btn-group-lg app-menu" ng-class="{'btn-group-justified': windowWidth > 750, 'btn-group-vertical vertical-justified': windowWidth <= 750}" role="group">							
 								<a class="btn btn-default" href="myview" ng-class="{'active' : view == '/myview'}">My View</a>							
-								<a ng-class="{'active' : view == '/users'}" class="btn btn-default" href="users">Users</a>							
+								<a ng-class="{'active' : view == '/users'}" class="btn btn-default" href="users">Users</a>
+								<a ng-class="{'active' : view == '/theme'}" class="btn btn-default" href="theme">Theme Manager</a>	
 							</div>
 						</div>
 					</div>
@@ -199,10 +199,12 @@
 	    <!-- Factories -->
 
 	    <!-- Models -->
+	    <script src="models/themeModel.js"></script>
 	    <script src="models/userRepoModel.js"></script>
 
 	    <!-- Controllers -->
 	    <script src="controllers/adminController.js"></script>
+	    <script src="controllers/themeController.js"></script>
 	    <script src="controllers/userRepoController.js"></script>
 	    <script src="controllers/navigationController.js"></script>
 
