@@ -8,12 +8,19 @@ app.config(function($routeProvider) {
 			templateUrl: 'views/users.html',
 			access: ["ROLE_ADMIN", "ROLE_MANGER"]
 		}).
-		when('/myview', {
-			templateUrl: 'views/myview.html'
+		when('/directives', {
+			templateUrl: 'views/directive-demo/directives.html',
+			controller: 'DirectiveGalleryController'
+		}).
+		when('/directives/:tab', {
+			templateUrl: 'views/directive-demo/directives.html',
+			controller: 'DirectiveGalleryController',
+			reloadOnSearch: false
 		}).		
 		when('/', {
 			templateUrl: 'views/home.html'
 		}).
+
 
 		// Error Routes
 		when('/error/403', {

@@ -18,7 +18,6 @@
 	
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
-	<!--<link rel="stylesheet" href="resources/styles/main.css">-->
 	<link rel="stylesheet" href="resources/styles/app.css">
 
 	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -58,7 +57,7 @@
 							<a class="dropdown-toggle hover-pointer" data-toggle="dropdown" aria-expanded="false"><username></username> <span class="caret"></span></a>
 
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="myview">My View</a></li>
+								<li><a href="directives">Directives</a></li>
 								<li ng-if="isAdmin() || isAssuming() == 'true'" role="presentation" class="dropdown-header">Manager Actions</li>
 								<li ng-if="isAdmin() || isManager()" ><a href="users">Manage Users</a></li>
 								<li ng-if="isAdmin() || isAssuming() == 'true'" role="presentation" class="divider"></li>
@@ -83,7 +82,7 @@
 						<div class="col-12 col-lg-12">
 
 							<div class="btn-group btn-group-lg app-menu" ng-class="{'btn-group-justified': windowWidth > 750, 'btn-group-vertical vertical-justified': windowWidth <= 750}" role="group">							
-								<a class="btn btn-default" href="myview" ng-class="{'active' : view == '/myview'}">My View</a>							
+								<a class="btn btn-default" href="directives" ng-class="{'active' : view == '/directives'}">Directives</a>							
 								<a ng-class="{'active' : view == '/users'}" class="btn btn-default" href="users">Users</a>							
 							</div>
 						</div>
@@ -155,6 +154,9 @@
 	    <script src="bower_components/core/app/directives/userDirective.js"></script>
 	    <script src="bower_components/core/app/directives/modalDirective.js"></script>
 	    <script src="bower_components/core/app/directives/alertDirective.js"></script>
+	    <script src="bower_components/core/app/directives/accordionDirective.js"></script>
+	   	<script src="bower_components/core/app/directives/tabsDirective.js"></script>
+	   	<script src="bower_components/core/app/directives/tooltipDirective.js"></script>
 
 	    <!-- Services -->
 	    <script src="bower_components/core/app/services/accesscontrollservice.js"></script>
@@ -205,6 +207,7 @@
 	    <script src="controllers/adminController.js"></script>
 	    <script src="controllers/userRepoController.js"></script>
 	    <script src="controllers/navigationController.js"></script>
+	    <script src="controllers/directiveGalleryController.js"></script>
 
 	    <script src="controllers/navigationController.js"></script>
 	    
