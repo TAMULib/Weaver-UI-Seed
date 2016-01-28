@@ -9,7 +9,7 @@
   "dependencies": {
     "ng-table": "0.5.4",
     "ng-csv": "0.3.2",
-    "core": "git@framework.github.com:TAMULib/Angular-Framework.git#di-challenge-staging"
+    "core": "git@framework.github.com:TAMULib/Angular-Framework.git#di-challenge-hassle"
   },
   "resolutions": {
     "angular": "1.4.x"
