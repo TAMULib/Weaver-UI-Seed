@@ -14,7 +14,8 @@ app.config(function($routeProvider) {
 		}).
 		when('/directives', {
 			templateUrl: 'views/directive-demo/directives.html',
-			controller: 'DirectiveGalleryController'
+			controller: 'DirectiveGalleryController',
+			reloadOnSearch: false
 		}).
 		when('/directives/:tab', {
 			templateUrl: 'views/directive-demo/directives.html',
