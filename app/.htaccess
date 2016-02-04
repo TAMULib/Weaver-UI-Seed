@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-    RewriteBase /tamu-ui-seed/
+    RewriteBase /weaver-ui-seed/
 
 
     RewriteEngine on
