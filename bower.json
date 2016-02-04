@@ -1,15 +1,15 @@
 {
-  "name": "TAMU-UI-Seed",
-  "description": "An example user interface using the TAMU-UI-Core",
+  "name": "Weaver-UI-Seed",
+  "description": "An example user interface using the Weaver-UI-Core",
   "version": "0.0.1",
-  "homepage": "https://github.com/TAMULib/TAMU-UI-Seed",
+  "homepage": "https://github.com/TAMULib/Weaver-UI-Seed.git",
   "license": "MIT",
   "private": true,
   "ignore": [],
   "dependencies": {
     "ng-table": "0.5.4",
     "ng-csv": "0.3.2",
-    "core": "git@framework.github.com:TAMULib/Angular-Framework.git#di-challenge-2-staging"
+    "core": "git@github.com:TAMULib/Weaver-UI-Core.git#master"
   },
   "resolutions": {
     "angular": "1.4.x"
