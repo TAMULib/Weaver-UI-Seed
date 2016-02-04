@@ -14,6 +14,7 @@
 					<thead>
 						<tr>
 							<th>UIN</th>
+							<th>Email</th>
 							<th>FirstName</th>
 							<th>LastName</th>
 							<th>Role</th>
@@ -24,6 +25,7 @@
 					<tbody>
 						<tr ng-repeat="thisUser in userRepo.list track by thisUser.uin">
 							<td>{{thisUser.uin}}</td>
+							<td>{{thisUser.email}}</td>
 							<td>{{thisUser.firstName}}</td>
 							<td>{{thisUser.lastName}}</td>
 							<td>{{thisUser.role}}</td>

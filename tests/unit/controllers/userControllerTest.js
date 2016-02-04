@@ -4,7 +4,7 @@ describe('controller: UserController', function() {
 
 	beforeEach(module('core'));
 
-	beforeEach(module('metadataTool'));
+	beforeEach(module('app'));
 	
 	beforeEach(module('mock.user'));
 	
