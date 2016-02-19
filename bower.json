@@ -1,8 +1,8 @@
 {
-  "name": "Catalog-UI",
-  "description": "An angular frontend for the Catalog Service",
+  "name": "Weaver-UI-Seed",
+  "description": "An example user interface using the Weaver-UI-Core",
   "version": "0.0.1",
-  "homepage": "https://github.com/TAMULib/CatalogUI.git",
+  "homepage": "https://github.com/TAMULib/Weaver-UI-Seed.git",
   "license": "MIT",
   "private": true,
   "ignore": [],
