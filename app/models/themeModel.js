@@ -35,22 +35,38 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		}
 	};
 
+	Theme.remove = function(theme) {
+		for(var i in Theme.data.list) {
+			if(Theme.data.list[i].id == theme.id) {
+				Theme.data.list.splice(i, 1);
+				break;
+			}
+		}
+	}
+
 	Theme.get = function() {
 		
-		var newThemePromise = WsApi.fetch({
+		Theme.promise = WsApi.fetch({
 				endpoint: '/private/queue', 
 				controller: 'theme', 
 				method: "all",
 		});
 
-		Theme.promise = newThemePromise;
-		Theme.data = new Theme(newThemePromise);
+		Theme.data = new Theme(Theme.promise);
 
 		WsApi.listen({
-				endpoint: '/channel', 
-				controller: 'theme/'
+			endpoint: '/channel', 
+			controller: 'theme'
 		}).then(null, null, function(response) {
 			Theme.receive(JSON.parse(response.body).payload.CoreTheme, response);
+		});
+
+		WsApi.listen({
+			endpoint: '/channel', 
+			controller: 'theme/removed'
+		}).then(null, null, function(response) {
+			console.log(response)
+			Theme.remove(JSON.parse(response.body).payload.CoreTheme);
 		});
 		
 		return Theme.data;
@@ -65,17 +81,17 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		Theme.get();
 	};
 
-	Theme.updateThemeProperty = function(themeId,propertyId,value) {
+	Theme.updateThemeProperty = function(themeId, propertyId, value) {
 		return $q(function(resolve,reject) {
 			WsApi.fetch({
-					endpoint: '/private/queue', 
-					controller: 'theme', 
-					method: 'update-property',
-					data: {
-						"themeId":themeId,
-						"propertyId":propertyId,
-						"value":value,
-					}
+				endpoint: '/private/queue', 
+				controller: 'theme', 
+				method: 'update-property',
+				data: {
+					"themeId": themeId,
+					"propertyId": propertyId,
+					"value": value,
+				}
 			}).then(function() {
 				resolve("Theme Property Updated");
 			},function() {
@@ -84,13 +100,15 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		});
 	};
 
-	Theme.addTheme = function(newTheme) {
+	Theme.addTheme = function(theme) {
 		return $q(function(resolve,reject) {
 			WsApi.fetch({
-					endpoint: '/private/queue', 
-					controller: 'theme', 
-					method: 'add-theme',
-					data: {"newTheme":newTheme}
+				endpoint: '/private/queue', 
+				controller: 'theme', 
+				method: 'add-theme',
+				data: { 
+					"theme": theme
+				}
 			}).then(function() {
 				resolve("Theme Added");
 			},function() {
@@ -99,13 +117,32 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 		});
 	};
 
-	Theme.activateTheme = function(themeId) {
+	Theme.removeTheme = function(theme) {
 		return $q(function(resolve,reject) {
 			WsApi.fetch({
-					endpoint: '/private/queue', 
-					controller: 'theme', 
-					method: 'activate-theme',
-					data: {"themeId":themeId}
+				endpoint: '/private/queue', 
+				controller: 'theme', 
+				method: 'remove-theme',
+				data: {
+					"theme": theme
+				}
+			}).then(function() {				
+				resolve("Theme Removed");
+			},function() {
+				reject("Failed to remove Theme");
+			});
+		});
+	};
+
+	Theme.activateTheme = function(theme) {
+		return $q(function(resolve,reject) {
+			WsApi.fetch({
+				endpoint: '/private/queue', 
+				controller: 'theme', 
+				method: 'activate-theme',
+				data: { 
+					"theme": theme
+				}
 			}).then(function() {
 				resolve("Theme Activated");
 			},function() {
@@ -113,6 +150,7 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 			});
 		});
 	};
+
 	return Theme;
 	
 });
