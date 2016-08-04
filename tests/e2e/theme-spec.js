@@ -57,6 +57,30 @@ describe('theme', function () {
 
 	})
 
+	it('can active new', function () {
+
+		
+
+	})
+
+	it('can change property', function () {
+
+		
+
+	})
+
+	it('can refresh after changed property', function () {
+
+		
+
+	})
+
+	it('can active previous', function () {
+
+		
+
+	})
+
 	it('can delete newly created', function () {
 
 		element.all(by.repeater('theme in themes.list')).each(function(theme) {
