@@ -65,7 +65,6 @@ app.service("ThemeModel", function($q,AbstractModel, WsApi) {
 			endpoint: '/channel', 
 			controller: 'theme/removed'
 		}).then(null, null, function(response) {
-			console.log(response)
 			Theme.remove(JSON.parse(response.body).payload.CoreTheme);
 		});
 		
