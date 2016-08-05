@@ -52,10 +52,10 @@ app.service("UserRepo", function($route, WsApi, AbstractModel) {
 	
 	};
 	
-	Users.updateRole = function(uin, role) {
+	Users.updateRole = function(user) {
 		var change = {
-			'uin': uin,
-			'role': role
+			'uin': user.uin,
+			'role': user.role
 		};
 		
 		var updateUserRolePromise = WsApi.fetch({
