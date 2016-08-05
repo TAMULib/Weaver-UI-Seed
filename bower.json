@@ -9,7 +9,7 @@
   "dependencies": {
     "ng-table": "0.5.4",
     "ng-csv": "0.3.2",
-    "core": "git@github.com:TAMULib/Weaver-UI-Core.git#master"
+    "core": "git@github.com:TAMULib/Weaver-UI-Core.git#bffb1f75b82b29748d8ba46dce7e4f6749e8ef7a"
   },
   "resolutions": {
     "angular": "1.4.x"
