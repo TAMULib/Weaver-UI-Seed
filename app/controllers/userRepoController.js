@@ -8,13 +8,17 @@ app.controller('UserRepoController', function ($controller, $location, $injector
 
     	var UserRepo = $injector.get("UserRepo");
 
+    	$scope.userUpdated = {};
+
 	    $scope.userRepo = UserRepo.getAll();
 
 	    console.log($scope.userRepo)
 	     
 	    	
 		$scope.updateRole = function(user) {
-			console.log(user)
+			
+			angular.extend($scope.userUpdated, user);
+
 			user.save();
 
 			if($scope.user.uin == user.uin) {
@@ -44,9 +48,9 @@ app.controller('UserRepoController', function ($controller, $location, $injector
 		};
 			
 
-	    UserRepo.listen(function() {
-	    	if(JSON.parse(data.body).payload.HashMap.changedUserUin == $scope.user.uin) {
-				User.refresh();
+	    UserRepo.listen(function(response) {
+	    	if($scope.userUpdated.uin == $scope.user.uin) {
+	    		$scope.userUpdated = {};
 				$route.reload();
 			}
 	    });
