@@ -5,6 +5,9 @@ var app = angular.module('app',
 	'app.version'
 ]);
 
+app.model = core.model;
+app.repo = core.repo;
+
 //This method's callback is passed to stomp and executed on both successfull connection, as well as disconnect.
 setUpApp(function(connected) {
 
@@ -12,6 +15,7 @@ setUpApp(function(connected) {
 	appConfig.connected = connected;
 
 	app.constant('appConfig', appConfig);
+	app.constant('api', apiMapping);
 
 	angular.element(document).ready(function() {	   	
 	   	try {
