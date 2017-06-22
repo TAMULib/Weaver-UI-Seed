@@ -21,9 +21,9 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 	<!-- Change this to the domain of your webservice -->
-	<link rel="stylesheet" href="http://localhost:9000/wro/app.css">
+	<link rel="stylesheet" type='text/css' href="resources/styles/app.css">
 
-	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="bower_components/html5-boilerplate/src/js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
 <body>
@@ -134,7 +134,10 @@
 		<script src="bower_components/core/app/components/version/version-directive.js"></script>
 		<script src="bower_components/core/app/components/version/interpolate-filter.js"></script>
 
-
+		<!-- required by core fileapi -->
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <!-- endbuild -->
 
 
 		<!-- App Configuration -->
@@ -151,9 +154,9 @@
 
 		<!-- Application Start -->	
 	    <script src="bower_components/core/app/core.js"></script>
+	    <script src="bower_components/core/app/setup.js"></script>
 	    <script src="bower_components/core/app/config/coreRuntime.js"></script>
 	    <script src="bower_components/core/app/config/coreAngularConfig.js"></script>
-	    <script src="bower_components/core/app/setup.js"></script>
 	    <script src="bower_components/core/app/config/logging.js"></script>
 
 	    <!-- Directives -->
@@ -182,6 +185,8 @@
 	  	<script src="bower_components/core/app/services/validationstore.js"></script>
 	  	<script src="bower_components/core/app/services/userservice.js"></script>
 	  	<script src="bower_components/core/app/services/modalservice.js"></script>
+	  	<script src="bower_components/core/app/services/modelcache.js"></script>
+      <script src="bower_components/core/app/services/modelupdateservice.js"></script>
 
 	    <!-- Factories -->
 
