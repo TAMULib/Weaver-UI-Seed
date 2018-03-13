@@ -192,65 +192,43 @@ module.exports = function (grunt) {
 					}
 			},
 
-			copy: {
-					styles: {
-							files: [{
-									cwd: 'node_modules/ng-sortable/dist/',
-									src: 'ng-sortable.min.css',
-									dest: '<%= build.app %>/resources/styles/',
-									expand: true
-							}]
+			sass: {
+					options: {
+							sourceMap: false
 					},
-					tinymce: {
+					dist: {
 							files: [{
-									cwd: 'node_modules/tinymce/',
-									src: [
-											'plugins/**/*',
-											'themes/**/*',
-											'skins/**/*'
-									],
-									dest: '<%= build.app %>/resources/scripts/',
-									expand: true
+									expand: true,
+									cwd: 'app/resources/styles/sass',
+									src: ['*.scss'],
+									dest: 'app/resources/styles',
+									ext: '.css'
 							}]
-					},
-					weaver: {
-							files: [{
-									src: [
-											'node_modules/weaver-ui-core/**/*.html',
-											'!node_modules/weaver-ui-core/docs/'
-									],
-									dest: '<%= build.app %>',
-									expand: true
-							}]
-					},
-					fonts: {
-							files: [{
-									src: [
-											'node_modules/bootstrap-sass/assets/fonts/bootstrap/*'
-									],
-									dest: '<%= build.app %>',
-									expand: true
-							}],
+					}
+			},
+
+			watch: {
+					css: {
+							files: '**/*.scss',
+							tasks: ['sass']
 					}
 			}
 
 	});
 
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-usemin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-symlink');
 
-	grunt.registerTask('default', ['jshint', 'copy:styles', 'clean', 'symlink']);
+	grunt.registerTask('default', ['jshint', 'sass', 'symlink']);
 
 	grunt.registerTask('watch', ['watch']);
 
-	grunt.registerTask('develop', ['jshint', 'concat', 'usemin', 'copy:styles', 'clean', 'symlink', 'watch']);
-
-	grunt.registerTask('deploy', ['jshint', 'concat', 'uglify', 'usemin', 'clean', 'copy']);
+	grunt.registerTask('deploy', ['jshint', 'concat', 'uglify', 'usemin', 'sass', 'symlink']);
 
 };
