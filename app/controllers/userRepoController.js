@@ -12,7 +12,7 @@ app.controller('UserRepoController', function ($controller, $location, $injector
 
 	    $scope.userRepo = UserRepo.getAll();
 
-	    console.log($scope.userRepo)
+	    console.log($scope.userRepo);
 	     
 	    	
 		$scope.updateRole = function(user) {

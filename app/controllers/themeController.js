@@ -4,7 +4,7 @@ app.controller('ThemeController', function ($controller, $scope, $window, ThemeR
 
 	$scope.themes = ThemeRepo.getAll();
 
-	console.log($scope.themes)
+	console.log($scope.themes);
 
 	$scope.refreshable = false;
 
@@ -26,7 +26,7 @@ app.controller('ThemeController', function ($controller, $scope, $window, ThemeR
 	};
 
 	$scope.addTheme = function() {
-		console.log($scope.newTheme)
+		console.log($scope.newTheme);
 		ThemeRepo.create($scope.newTheme).then(function() {
 			reset();
 		});

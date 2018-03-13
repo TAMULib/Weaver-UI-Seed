@@ -37,6 +37,7 @@ var apiMapping = {
 		}
 	},
 	User: {
+		lazy: true,
 		instantiate: {
 			'endpoint': '/private/queue', 
 			'controller': 'user', 
@@ -57,4 +58,4 @@ var apiMapping = {
 			'method': 'update'
 		}
 	}
-}
+};
