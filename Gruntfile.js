@@ -62,8 +62,6 @@ module.exports = function (grunt) {
 									'node_modules/angular-messages/angular-messages.min.js',
 									'node_modules/angular-mocks/angular-mocks.js',
 
-									'node_modules/ng-csv/build/ng-csv.min.js',
-
 									'node_modules/ng-sortable/dist/ng-sortable.min.js',
 
 									'node_modules/ng-table/bundles/ng-table.min.js',
@@ -71,12 +69,7 @@ module.exports = function (grunt) {
 									'node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
 									'node_modules/ng-file-upload/dist/ng-file-upload.min.js',
 
-									'node_modules/tinymce/tinymce.min.js',
-									'node_modules/angular-ui-tinymce/dist/tinymce.min.js',
-
-									'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
-
-									'node_modules/file-saver/FileSaver.min.js'
+									'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
 							],
 							dest: '<%= build.app %>/resources/scripts/vendor_concat.js'
 					},
@@ -102,6 +95,7 @@ module.exports = function (grunt) {
 									'node_modules/weaver-ui-core/app/config/logging.js',
 
 									'node_modules/weaver-ui-core/app/constants/apiResponseActions.js',
+									'node_modules/weaver-ui-core/app/constants/httpMethodVerbs.js',
 
 									'node_modules/weaver-ui-core/app/directives/headerDirective.js',
 									'node_modules/weaver-ui-core/app/directives/footerDirective.js',
