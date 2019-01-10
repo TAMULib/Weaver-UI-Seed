@@ -1,5 +1,5 @@
 
-app.config(function($routeProvider) {	
+export default function routes($routeProvider) {	
 	$routeProvider.
 		when('/register', {
 			templateUrl: 'bower_components/core/app/views/register.html'
@@ -47,4 +47,4 @@ app.config(function($routeProvider) {
 		otherwise({
 			redirectTo: '/error/404'
 		});
-});
+}

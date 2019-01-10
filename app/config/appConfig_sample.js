@@ -1,4 +1,4 @@
-var appConfig = { 
+export const appConfig = { 
 
 		'version': 'TAMU UI Seed',
 

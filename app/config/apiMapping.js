@@ -1,5 +1,5 @@
 // CONVENTION: must match model name, case sensitive
-var apiMapping = {
+export const apiMapping = {
 	Theme: {
 		all: {
 			'endpoint': '/private/queue',
