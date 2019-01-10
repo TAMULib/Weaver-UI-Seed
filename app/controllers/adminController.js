@@ -1,5 +1,5 @@
-app.controller('AdminController', function ($controller, $injector, $route, $scope) {
+export default function AdminController($controller, $injector, $route, $scope) {
 
-    angular.extend(this, $controller('CoreAdminController', {$scope: $scope}));
+  angular.extend(this, $controller('CoreAdminController', {$scope: $scope}));
 
-});
+}

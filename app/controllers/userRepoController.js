@@ -1,4 +1,4 @@
-app.controller('UserRepoController', function ($controller, $location, $injector, $scope, $route, StorageService, UserService) {
+ export default function UserRepoController($controller, $location, $injector, $scope, $route, StorageService, UserService) {
 
 	angular.extend(this, $controller('AbstractController', {
 			$scope: $scope
@@ -52,6 +52,4 @@ app.controller('UserRepoController', function ($controller, $location, $injector
 			}
 
 	});
-
-	
-});
+}
