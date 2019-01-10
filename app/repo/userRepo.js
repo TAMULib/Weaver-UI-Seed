@@ -1,5 +1,5 @@
-app.repo("UserRepo", function UserRepo() {
+export default function UserRepo() {
 
 	return this;
 
-});
+}

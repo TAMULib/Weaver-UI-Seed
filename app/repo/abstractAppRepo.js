@@ -1,4 +1,4 @@
-app.service("AbstractAppRepo", function () {
+export default function AbstractAppRepo() {
 
 	return function AbstractAppRepo() {
 
@@ -7,4 +7,4 @@ app.service("AbstractAppRepo", function () {
 		return this;
 	};
 
-});
+}

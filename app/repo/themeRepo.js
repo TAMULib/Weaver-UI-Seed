@@ -1,4 +1,4 @@
-app.repo("ThemeRepo", function ThemeRepo($q, Theme, WsApi) {
+export default function ThemeRepo($q, Theme, WsApi) {
 
 	var themeRepo = this;
 
@@ -30,4 +30,4 @@ app.repo("ThemeRepo", function ThemeRepo($q, Theme, WsApi) {
 
 	return this;
 
-});
+}
