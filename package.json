@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "watch": "webpack --watch",
     "prestart": "npm install -g grunt-cli",
     "postinstall": "npm run build",
     "pretest": "npm install",
@@ -37,6 +38,8 @@
     "eslint": "^5.9.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-angular": "^4.0.0",
+    "file-loader": "3.0.1",
+    "html-loader": "^0.5.5",
     "karma": "3.1.4",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.1",
@@ -49,6 +52,7 @@
     "protractor": "5.1.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
+    "url-loader": "1.1.2",
     "webpack": "4.28.1",
     "webpack-cli": "^3.1.2"
   }
