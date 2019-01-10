@@ -1,10 +1,10 @@
 export default function Theme() {
 
-	return function Theme() {
+  return function Theme() {
 		
-		// additional model methods and variables
+    // additional model methods and variables
 
-		return this;
-	};
+    return this;
+  };
 
 }

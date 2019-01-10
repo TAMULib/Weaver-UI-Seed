@@ -4,14 +4,14 @@ import routes from './routes';
 import runTime from './runTime';
 
 angular.module('app')
-    .constant('apiMapping', apiMapping)
-    .constant('appConfig', appConfig)
-    .config(routes)
-    .run(runTime);
+  .constant('apiMapping', apiMapping)
+  .constant('appConfig', appConfig)
+  .config(routes)
+  .run(runTime);
 
 export {
-    apiMapping,
-    appConfig,
-    routes,
-    runTime
+  apiMapping,
+  appConfig,
+  routes,
+  runTime
 };

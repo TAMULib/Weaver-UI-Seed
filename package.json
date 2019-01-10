@@ -18,7 +18,9 @@
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "stop": "wvr server --stop",
     "start": "wvr server -b /cap --prod --uid magpie-webserver",
-    "start-dev": "wvr server -b /magpie --uid magpie-webserver"
+    "start-dev": "wvr server -b /magpie --uid magpie-webserver",
+    "lint": "eslint \"app/**/*(*.js|*.ts)\"",
+    "lint:fix": "eslint \"app/**/*(*.js|*.ts)\" --fix"
   },
   "dependencies": {
     "ng-table": "3.0.1",
@@ -30,8 +32,8 @@
     "@babel/preset-env": "^7.1.6",
     "angular": "^1.7.5",
     "babel-loader": "^8.0.4",
-    "css-loader": "2.1.0",
     "coveralls": "3.0.2",
+    "css-loader": "2.1.0",
     "eslint": "^5.9.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-angular": "^4.0.0",

@@ -1,10 +1,8 @@
- export default function ThemeController($controller, $scope, $window, ThemeRepo) {
+export default function ThemeController($controller, $scope, $window, ThemeRepo) {
 	
   angular.extend(this, $controller('AbstractController', {$scope: $scope}));
 
   $scope.themes = ThemeRepo.getAll();
-
-  console.log($scope.themes);
 
   $scope.refreshable = false;
 
@@ -26,7 +24,6 @@
   };
 
   $scope.addTheme = function() {
-    console.log($scope.newTheme);
     ThemeRepo.create($scope.newTheme).then(function() {
       reset();
     });

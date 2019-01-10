@@ -7,7 +7,7 @@ module.exports = {
         app: './app.js'
     },
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/app/dist',
         filename: '[name].bundle.js'
     },
     devtool: 'eval-source-map',

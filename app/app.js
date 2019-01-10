@@ -46,7 +46,7 @@ setup.setUpApp(config.appConfig, function (connected) {
           message: "Web service cannot be reached."
         }, "/app/errors");
       }
-  } catch (e) {
+    } catch (e) {
       // eslint-disable-next-line no-console
       console.log(e);
       /*
