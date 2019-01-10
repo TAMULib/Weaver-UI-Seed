@@ -1,4 +1,4 @@
-app.model("Theme", function () {
+export default function Theme() {
 
 	return function Theme() {
 		
@@ -7,4 +7,4 @@ app.model("Theme", function () {
 		return this;
 	};
 
-});
+}

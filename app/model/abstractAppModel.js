@@ -1,4 +1,4 @@
-app.factory("AbstractAppModel", function AbstractAppModel() {
+export default function AbstractAppModel() {
 
 	return function AbstractAppModel() {
 
@@ -7,4 +7,4 @@ app.factory("AbstractAppModel", function AbstractAppModel() {
 		return this;
 	};
 
-});
+}
