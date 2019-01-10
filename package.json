@@ -6,8 +6,9 @@
   "repository": "https://github.com/TAMULib/Weaver-UI-Seed.git",
   "license": "MIT",
   "scripts": {
+    "build": "webpack",
     "prestart": "npm install -g grunt-cli",
-    "postinstall": "grunt",
+    "postinstall": "npm run build",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
@@ -22,25 +23,31 @@
   "dependencies": {
     "ng-table": "3.0.1",
     "ng-file-upload": "12.2.13",
-    "weaver-ui-core": "git+https://github.com/TAMULib/Weaver-UI-Core.git#2.x"
+    "weaver-ui-core": "git+https://github.com/TAMULib/Weaver-UI-Core.git#webpack-upgrade"
   },
   "devDependencies": {
-    "grunt": "1.0.1",
-    "grunt-cli": "1.2.0",
-    "grunt-contrib-concat": "1.0.1",
-    "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-jshint": "1.1.0",
-    "grunt-contrib-symlink": "1.0.0",
-    "grunt-contrib-uglify": "3.0.1",
-    "grunt-contrib-watch": "1.0.0",
-    "grunt-sass": "2.0.0",
-    "grunt-usemin": "3.1.1",
-    "jshint-stylish": "2.2.1",
-    "karma": "1.7.1",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "angular": "^1.7.5",
+    "babel-loader": "^8.0.4",
+    "css-loader": "2.1.0",
+    "coveralls": "3.0.2",
+    "eslint": "^5.9.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-angular": "^4.0.0",
+    "karma": "3.1.4",
     "karma-chrome-launcher": "2.2.0",
-    "karma-firefox-launcher": "1.0",
-    "karma-jasmine": "1.1.0",
+    "karma-coverage": "1.1.1",
+    "karma-firefox-launcher": "1.0.1",
+    "karma-jasmine": "2.0.1",
     "karma-junit-reporter": "1.2.0",
-    "protractor": "5.1.2"
+    "karma-ng-html2js-preprocessor": "1.0.0",
+    "karma-webpack": "4.0.0-rc.3",
+    "node-sass": "4.11.0",
+    "protractor": "5.1.2",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "webpack": "4.28.1",
+    "webpack-cli": "^3.1.2"
   }
 }
