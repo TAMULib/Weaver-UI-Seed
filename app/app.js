@@ -7,7 +7,6 @@ import 'angular-ui-bootstrap';
 import * as setup from 'weaver-ui-core/app/setup';
 import './resources/styles/sass/app.scss';
 
-
 var app = angular.module('app', [
   'ngRoute',
   'ngSanitize',

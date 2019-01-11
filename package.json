@@ -6,8 +6,9 @@
   "repository": "https://github.com/TAMULib/Weaver-UI-Seed.git",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
+    "build:dev": "webpack",
+    "build:watch": "webpack --watch",
+    "build": "webpack -p",
     "prestart": "npm install -g grunt-cli",
     "postinstall": "npm run build",
     "pretest": "npm install",
