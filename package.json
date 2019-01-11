@@ -5,6 +5,7 @@
   "description": "An example user interface using the Weaver-UI-Core",
   "repository": "https://github.com/TAMULib/Weaver-UI-Seed.git",
   "license": "MIT",
+  "main": "./app/app.js",
   "scripts": {
     "build:dev": "webpack",
     "build:watch": "webpack --watch",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "@types/node": "10.12.18",
     "angular": "^1.7.5",
     "babel-loader": "^8.0.4",
     "copy-webpack-plugin": "^4.6.0",
@@ -53,8 +55,11 @@
     "node-sass": "4.11.0",
     "protractor": "5.1.2",
     "sass-loader": "7.1.0",
+    "source-map-loader": "^0.2.4",
     "style-loader": "0.23.1",
     "symlink-webpack-plugin": "^0.1.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.2",
     "url-loader": "1.1.2",
     "webpack": "4.28.1",
     "webpack-cli": "^3.1.2"

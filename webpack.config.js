@@ -43,14 +43,20 @@ module.exports = {
         loader: 'eslint-loader'
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [path.resolve(__dirname, 'app')],
         exclude: [path.resolve(__dirname, 'app/node_modules')]
-      }
+      }      
     ]
   },
   resolve: {
+    extensions: ['.ts', '.js'],
     modules: [
       path.resolve('./app'),
       path.resolve('./node_modules'),
