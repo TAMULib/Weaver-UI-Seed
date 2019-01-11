@@ -33,6 +33,7 @@
     "@babel/preset-env": "^7.1.6",
     "angular": "^1.7.5",
     "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.6.0",
     "coveralls": "3.0.2",
     "css-loader": "2.1.0",
     "eslint": "^5.9.0",
@@ -52,6 +53,7 @@
     "protractor": "5.1.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
+    "symlink-webpack-plugin": "^0.1.0",
     "url-loader": "1.1.2",
     "webpack": "4.28.1",
     "webpack-cli": "^3.1.2"

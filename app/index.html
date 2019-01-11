@@ -37,8 +37,8 @@
 
 					<nav class="pull-right userMenu" ng-controller="AuthenticationController">
 
-						<modal modal-id="verifyEmailModal" modal-view="node_modules/weaver-ui-core/app/views/modals/verifyEmailModal.html" modal-header-class="modal-header-primary"></modal>					
-						<modal modal-id="loginModal" modal-view="node_modules/weaver-ui-core/app/views/modals/loginModal.html" modal-header-class="modal-header-primary"></modal>
+					  <!-- <modal modal-id="verifyEmailModal" modal-view="node_modules/weaver-ui-core/app/views/modals/verifyEmailModal.html" modal-header-class="modal-header-primary"></modal>					
+						<modal modal-id="loginModal" modal-view="node_modules/weaver-ui-core/app/views/modals/loginModal.html" modal-header-class="modal-header-primary"></modal> -->
 
 						<ul  ng-if="isAnonymous()" class="list-inline">
 						  	<li><a href ng-if="isAnonymous()" ng-click="openModal('#loginModal')">Login</a></li>
@@ -93,9 +93,9 @@
 
 	<!-- build:js resources/scripts/bundle.js -->
 
-  <script src="dist/vendors~app.bundle.js"></script>
+  <script src="vendors~app.bundle.js"></script>
 
-  <script src="dist/app.bundle.js"></script>
+  <script src="app.bundle.js"></script>
 
   <!-- endbuild -->
 	

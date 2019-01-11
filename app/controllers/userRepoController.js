@@ -5,8 +5,9 @@ export default function UserRepoController($controller, $location, $injector, $s
   }));
 
   $scope.user = UserService.getCurrentUser();
-
+  
   UserService.userReady().then(function() {
+
     if ($scope.isAdmin() || $scope.isManager()) {
 
       var UserRepo = $injector.get("UserRepo");
