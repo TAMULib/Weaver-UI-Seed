@@ -1,10 +1,5 @@
-$primary: #500000;
-$secondary: #3c0000;
-$baseFontSize: 14pt;
-$linkColor: #337ab7;
-
-@import "node_modules/weaver-ui-core/app/resources/styles/sass/main";
-@import "node_modules/weaver-ui-core/app/resources/styles/sass/theme-base";
+@import "../../../node_modules/weaver-ui-core/app/resources/styles/sass/theme-base.scss";
+@import "../../../node_modules/weaver-ui-core/app/resources/styles/sass/main.scss";
 
 main {
   display: block;
@@ -34,7 +29,7 @@ main footer {
   cursor: pointer;
 }
 
-.tab-pane .well { 
+.tab-pane .well {
   min-height: 600px
 }
 
