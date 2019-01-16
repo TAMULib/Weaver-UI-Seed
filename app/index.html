@@ -25,13 +25,26 @@
 	<!-- Content placed here will appear on every page -->
 	<main>
 
-		<tamuheader title="Weaver UI Seed"></tamuheader>
-
-		<alerts types="WARNING, ERROR"></alerts>
+    <tamuheader title=""></tamuheader>
+    
+    <wvr-hero 
+      full-width="true"
+      background-image="resources/images/bird.jpg"
+    >
+      <h1>Weaver Seed App</h1>
+      <p>A demonstration of the Weaver UI Core and its associated component library.</p>
+      <a class="btn btn-primary" href="https://github.com/TAMULib/Weaver-UI-Core">Weaver UI Core</a>
+    </wvr-hero>
+    
+    <alerts types="WARNING, ERROR"></alerts>
 		<alerts seconds="45" channels="auth/register" types="SUCCESS"></alerts>
 
 		<div class="container-fluid">
 			<div class="container">
+
+        
+
+
 				<div class="col-md-12 appContent">
 
 					<nav class="pull-right userMenu" ng-controller="AuthenticationController">
