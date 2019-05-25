@@ -1,4 +1,6 @@
-export default function DirectiveGalleryController($scope, AlertService) {
+export default function DirectiveGalleryController($scope, $controller, AlertService) {
+
+  angular.extend(this, $controller('AbstractController', {$scope: $scope}));
 
   AlertService.add({type: "SUCCESS", message: "This is a success alert."}, "directive/gallery");
   AlertService.add({type: "ERROR", message: "This is an error alert."}, "directive/gallery");
