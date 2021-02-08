@@ -37,7 +37,7 @@ module.exports = function(config){
 
             'app/directives/**/*.js',
             
-            'app/services/**/*.js',            
+            'app/services/**/*.js',
             
             'app/models/**/*.js',
             
@@ -52,9 +52,10 @@ module.exports = function(config){
 
         frameworks: ['jasmine'],
 
-        browsers : ['Chrome'],
+        browsers : ['Chrome', 'ChromeHeadless'],
 
         plugins : [
+            'karma-coverage',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',

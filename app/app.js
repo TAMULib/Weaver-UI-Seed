@@ -20,7 +20,7 @@ setUpApp(function(connected) {
 
 			if(!window.stompClient.connected) {
 				AlertService = injector.get('AlertService');
-	    		AlertService.add({type: "ERROR", message: "Web service cannot be reached."}, "/app/errors");
+	    		AlertSgervice.add({type: "ERROR", message: "Web service cannot be reached."}, "/app/errors");
 			}	
 		} catch (e) {
 			console.log(e);
@@ -38,7 +38,7 @@ setUpApp(function(connected) {
 	    		AlertService.add({type: "ERROR", message: "Web service cannot be reached."}, "/app/errors");
 	        } else {
 	        	//foreward to error page
-	        	console.log('forward to error page')
+	        	console.log('forward to error page');
 	        }
 	    }
 	});
