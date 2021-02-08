@@ -13,7 +13,7 @@ setUpApp(function(connected) {
 
 	app.constant('appConfig', appConfig);
 
-	angular.element(document).ready(function() {	   	
+	angular.element(document).ready(function() {
 	   	try {
 	   		//If the app is already bootstrapped then an error will be thrown
 			angular.bootstrap(document, ['app', 'core', 'ui.bootstrap']);
