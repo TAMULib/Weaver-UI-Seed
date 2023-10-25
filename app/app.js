@@ -20,7 +20,7 @@ setUpApp(function(connected) {
 
 			if(!window.stompClient.connected) {
 				AlertService = injector.get('AlertService');
-	    		AlertSgervice.add({type: "ERROR", message: "Web service cannot be reached."}, "/app/errors");
+				AlertService.add({type: "ERROR", message: "Web service cannot be reached."}, "/app/errors");
 			}	
 		} catch (e) {
 			console.log(e);
