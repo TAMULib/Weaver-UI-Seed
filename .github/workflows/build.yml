@@ -15,6 +15,11 @@ jobs:
       - name: "Install Chrome Drivers"
         run: sudo apt-get install xvfb
 
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
       - name: "Node Cache"
         uses: actions/cache@v2
         with:
@@ -27,12 +32,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-cache-node_modules-${{ hashFiles('**/package.json', '**/package-lock.json') }}
 
-      - name: "Setup Node"
-        uses: actions/setup-node@v2
-        with:
-          node-version: 8
-
-      - name: "Install Node"
+      - name: "npm Install"
         run: npm install
 
       - name: "Node Tests"
